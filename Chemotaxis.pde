@@ -1,6 +1,6 @@
 int num = 3;
 Bacteria[] dots;
-
+int rgb = (int)(Math.random()*7)+1;
 void setup() {
   // Initialize bacteria variables here 
   size(800, 800);
@@ -25,6 +25,7 @@ void draw() {
 void keyPressed() {
   // On key press, reset the screen and create a new set of bacteria
   blankScreen();
+  rgb = (int)(Math.random()*7)+1;
   num = (int)(Math.random() * 5) + 1;
   dots = new Bacteria[num]; // Reassign dots with new Bacteria array
   for (int i = 0; i < dots.length; i++) {
@@ -43,6 +44,19 @@ class Bacteria {
   }
 
   void show() {
+    if(rgb == 1)
+    fill(0, 0, (int)(Math.random() * 255));
+    if(rgb == 2)
+    fill(0, (int)(Math.random() * 255), 0);
+    if(rgb == 3)
+    fill((int)(Math.random() * 255), 0, 0);
+    if(rgb == 4)
+    fill(0, (int)(Math.random() * 255), (int)(Math.random() * 255));
+    if(rgb == 5)
+    fill((int)(Math.random() * 255), (int)(Math.random() * 255), 0);
+    if(rgb == 6)
+    fill((int)(Math.random() * 255), 0, (int)(Math.random() * 255));
+    if(rgb == 7)
     fill((int)(Math.random() * 255), (int)(Math.random() * 255), (int)(Math.random() * 255));
     hexagon(myX, myY);
   }
