@@ -62,22 +62,66 @@ class Bacteria {
   }
 
   void move() {
-    int direction = (int)(Math.random() * 4);
-    if (direction == 0) {
-      myX += 19;
-      myY += 10;
-    } else if (direction == 1) {
-      myX -= 19;
-      myY += 10;
-    } else if (direction == 2) {
-      myX += 19;
-      myY -= 10;
-    } else {
-      myX -= 19;
-      myY -= 10;
+      double direction = Math.random() * 3.5;
+      if(myX > 600 && myY > 600){
+        if (direction < 0.5) {
+          myX += 19;
+          myY += 10;
+        } else if (direction < 1.5) {
+          myX -= 19;
+          myY += 10;
+        } else if (direction < 2.5) {
+          myX += 19;
+          myY -= 10;
+        } else {
+          myX -= 19;
+          myY -= 10;
+        }
+      } else if(myX < 200 && myY < 200){
+        if (direction < 1) {
+          myX += 19;
+          myY += 10;
+        } else if (direction < 2) {
+          myX -= 19;
+          myY += 10;
+        } else if (direction < 3) {
+          myX += 19;
+          myY -= 10;
+        } else {
+          myX -= 19;
+          myY -= 10;
+        }
+      }else if(myX < 200 && myY > 600){
+        if (direction < 1) {
+          myX += 19;
+          myY += 10;
+        } else if (direction < 2) {
+          myX -= 19;
+          myY += 10;
+        } else if (direction < 2.5) {
+          myX += 19;
+          myY -= 10;
+        } else {
+          myX -= 19;
+          myY -= 10;
+        }
+      } else {
+        if (direction < 1) {
+          myX += 19;
+          myY += 10;
+        } else if (direction < 1.5) {
+          myX -= 19;
+          myY += 10;
+        } else if (direction < 2.5) {
+          myX += 19;
+          myY -= 10;
+        } else {
+          myX -= 19;
+          myY -= 10;
+        }
+      }
     }
   }
-}
 
 void hexagon(int xValue, int yValue) {
   beginShape();
